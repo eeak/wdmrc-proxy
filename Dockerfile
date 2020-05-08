@@ -11,7 +11,7 @@ ENV     WDMRC_VERS="1.11.0.15" \
         WDMRC_HOST="http://*" \
         WDMRC_ARGS=""
 
-RUN     apk add --no-cache --virtual .install-dep ca-certificates curl && \
+RUN     apk add --no-cache --virtual .install-dep ca-certificates curl nano && \
         apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
         curl -kfsSL -o /tmp/wdmrc-core.zip \
             ${WDMRC_REPO}/${WDMRC_VERS}/WebDAVCloudMailRu-${WDMRC_VERS}-dotNet461.zip && \
